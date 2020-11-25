@@ -5,11 +5,64 @@
     </head>
     <body>
         <!-- Convert to standalone CSS -->
-        <canvas id="ChanceWheel" style="display:block; background-color:#3e444d; margin-left: auto; margin-right: auto;" height="500" width="500"></canvas>
+        <div id="ChanceTheWrapper" style="display: flex; margin-left: auto; margin-right: auto;">
+            <div id="ColourPropotions" style="display: inline-block;">
+                    <div style="display: block;">
+                        <label for="Colour1">Type a colour:</label>
+                        <input id ="Colour1" type="text" style="height: 1em;">
+                    </div>
+                    <div style="display: block;">
+                        <label for="Colour2">Type a colour:</label>
+                        <input id ="Colour2"type="text" style="height: 1em;">
+                    </div>
+                    <div style="display: block;">
+                        <label for="Colour3">Type a colour:</label>
+                        <input id ="Colour3"type="text" style="height: 1em;">
+                    </div>
+                    <div style="display: block;">
+                        <label for="Colour4">Type a colour:</label>
+                        <input id ="Colour4" type="text" style="height: 1em;">
+                    </div>
+                    <div style="display: block;">
+                        <label for="Colour5">Type a colour:</label>
+                        <input id ="Colour5" type="text" style="height: 1em;">
+                    </div>
+                    <div style="display: block;">
+                        <label for="Colour6">Type a colour:</label>
+                        <input id ="Colour6" type="text" style="height: 1em;">
+                    </div>
+                    <div style="display: block;">
+                        <label for="Colour7">Type a colour:</label>
+                        <input id ="Colour7" type="text" style="height: 1em;">
+                    </div>
+                    <div style="display: block;">
+                        <label for="Colour8">Type a colour:</label>
+                        <input id ="Colour8" type="text" style="height: 1em;">
+                    </div>
+                    <div style="display: block;">
+                        <label for="Colour9">Type a colour:</label>
+                        <input id ="Colour9" type="text" style="height: 1em;">
+                    </div>
+                    <div style="display: block;">
+                        <label for="Colour10">Type a colour:</label>
+                        <input id ="Colour10" type="text" style="height: 1em;">
+                    </div>
+                    <div id="GenerateContainer" style="display: block; text-align: center;">
+                        <button id="GenerateChart" onclick="generate_chart()">Generate Chart</button>
+                    </div>
+                    <div id="SpinnerContainer" style="display: block; text-align: center;">
+                        <button id="SpinnerBtn" onclick="ran_choice()">Spin</button>
+                    </div>
+            </div>
+            <div style="display: block; position: absolute; top: 5%; left: 30%;">
+                <canvas id="ChanceWheel" style="display:block; position: fixed; background-color:#3e444d; z-index: 1;" height="500" width="500"></canvas>
+                <canvas id="Spinner" style="display:block; position: fixed; background-color:''; z-index: 2;" height="500" width="500"></canvas>
+            </div>
+        </div>
         <p>This is some placeholder text for a while.</p>
-        <button id="Choices_btn" onclick="first_draw()">Draw Chart</button>
+        <button id="Choices_btn" onclick="first_draw()" style="display:block; margin-left: 0; margin-right: auto;">Draw Chart</button>
         
-        <button id="Adjustment_btn" onclick="choices(colours.length,'RemoveOne')">Choose!</button>
+        <button id="Adjustment_btn"style="display:block; margin-left: 0; margin-right: auto" onclick="choices(colours.length,'RemoveOne')">Choose!</button>
         <script src="ChanceWheel.js"></script>
     </body>
 </html>
