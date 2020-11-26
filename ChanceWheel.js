@@ -1,6 +1,5 @@
 
-// var colours =['red','green','blue','cyan','magenta']
-// var og_colours = [...colours];
+
 var colourchoice =[];
 var og_colours=[];
 var randcols =[];
@@ -26,14 +25,45 @@ function generate_chart(){
 
 function first_draw(){
     var possibilities = og_colours.length;
+    var cumulative_colours =[];
+    for(i=0;i<possibilities;i++){
+        for(j=0;j<possibilities;j++){
+            if(og_colours[i]==og_colours[j]){
+                if(!cumulative_colours.includes(og_colours[i])){
+                    cumulative_colours.push(og_colours[i]);
+                }
+            }
+        }
+    }
+
+    var table_row1 = document.querySelector("#ColoursNames");
+    var table_row2 = document.querySelector("#Counts");
+    table_row1.innerHTML='';
+    table_row2.innerHTML='';
+    
+    
+    for (i=0;i<cumulative_colours.length;i++){
+        var table_colour = cumulative_colours[i];
+        var TABLE_COLOUR = cumulative_colours[i];
+        var blue =/blue/i;
+        if (table_colour.match(blue)){
+            table_colour = "#67ace0";
+        }
+        var name_cell = document.createElement("td");
+        name_cell.setAttribute("style",`font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size:22pt; color:${table_colour}`);
+        var count_cell = document.createElement("td");
+        count_cell.setAttribute("id",`${TABLE_COLOUR}`);
+        count_cell.setAttribute("style",`font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size:22pt; color:${table_colour}`)
+        count_cell.innerHTML='0';
+        name_cell.innerHTML=`${TABLE_COLOUR}`;
+        table_row1.appendChild(name_cell);
+        table_row2.appendChild(count_cell);
+        
+    }
     choices(possibilities, 'NoRemove');
+    
 }
 
-function Zero_remove(element){
-    if(element.length !=0){
-        return element;
-    }
-}
 function Null_remove(element){
     return element != null && element !='';
 }
@@ -61,14 +91,10 @@ function choices(possibilities, remove, index){
             var possibilities =randcols.length;
             colours.length=0;
             colours.push(...og_colours);
-            console.log(colours[index],'colindex');
-            console.log(randcols[index],'radnindex');
             colours[index] =randcols[index];
-            console.log(colours,'colouring');
             randcols.length=0;
         }
         else if(randcols.length ==0){
-            console.log('madeit');
             colours =[];
             colours.push(...og_colours);
         }
@@ -83,17 +109,37 @@ function choices(possibilities, remove, index){
         ctx.lineTo(x_loc,y_loc);
         ctx.closePath();
         ctx.fill();
+       
+       
     }
 
 }
 
 function ran_choice(){
     var num =Math.floor(Math.random()*colours.length);
-    console.log(randcols,'randcols1');
     randcols.length=0;
-    console.log(colours,'colors');
     randcols.push(...colours);
-    randcols[num]="#8f8f8f";
-    console.log(randcols,'randcols3');
+    var choice = og_colours[num];
+    var CHOICE = choice
+    choice = choice.toUpperCase();
+    if(choice.toUpperCase()=='BLUE'){
+        choice ="#67ace0";
+
+    }
+    
+    var label_css =`display: block; font-size: 30pt; font-weight: bold; font-family:Arial, Helvetica, sans-serif; margin-left: auto; margin-right: auto; text-align:center; background-color:#3e444d; color:${choice}`;
+    document.querySelector("#Choice").setAttribute("style",label_css);
+    document.querySelector("#Choice").innerHTML=CHOICE;
+    // setTimeout(function(){document.querySelector("#Choice").innerHTML=CHOICE}, 150);
+    setTimeout(function(){document.querySelector("#Choice").innerHTML=''}, 750);
+    
+    
+    var choicecount= Number(document.querySelector(`#${og_colours[num]}`).innerHTML);
+    choicecount++;
+    document.querySelector(`#${og_colours[num]}`).innerHTML=String(choicecount);
+
+    randcols[num]="white";
+
+
     choices(colours.length,'NoRemove', num);
 }
