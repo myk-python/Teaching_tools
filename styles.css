@@ -1,3 +1,7 @@
+body{
+    background-color: #3e444d;
+}
+
 #ChanceWrapper{
     display: flex; 
     margin-left: auto; 
