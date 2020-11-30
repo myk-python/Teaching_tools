@@ -10,12 +10,19 @@ function generate_chart(){
     colourchoice.length =0;
     for(i=1;i<11;i++){
         try{
-            var chosencolour = document.querySelector("#Colour"+String(i).value);
-            if (chosencolour !='' && chosencolour != 'null'){
-                if (chosencolour.match(blue)){
+            
+            // var chosencolour = document.querySelector("#Colour"+String(i).value);
+            
+            if (document.querySelector("#Colour"+String(i).value) !='' && document.querySelector("#Colour"+String(i).value) != 'null'){
+                console.log(document.querySelector("#Colour"+String(i).innerHTML));
+                if (document.querySelector("#Colour"+String(i).value).match(blue)){
+                    
                     chosencolour = "#67ace0";
                 }
-                colourchoice.push(chosencolour);
+                else{
+                    chosencolour =document.querySelector("#Colour"+String(i).value);
+                }
+                colourchoice.push(document.querySelector("#Colour"+String(i).value));
             }
         } 
         catch{
@@ -50,7 +57,7 @@ function first_draw(){
     for (i=0;i<cumulative_colours.length;i++){
         var table_colour = cumulative_colours[i];
         var TABLE_COLOUR = cumulative_colours[i];
-       
+        var blue = /blue/i;
         if (table_colour.match(blue)){
             table_colour = "#67ace0";
         }
