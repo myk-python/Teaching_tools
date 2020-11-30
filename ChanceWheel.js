@@ -4,13 +4,18 @@ var colourchoice =[];
 var og_colours=[];
 var randcols =[];
 var colours =[]
-
+// Stylistic choice to force all blues to appear as one hue/shade
+var blue =/blue/i;
 function generate_chart(){
     colourchoice.length =0;
     for(i=1;i<11;i++){
         try{
-            if (document.querySelector("#Colour"+String(i)).value !='' && document.querySelector("#Colour"+String(i)).value != 'null'){
-                colourchoice.push(document.querySelector("#Colour"+i).value);
+            var chosencolour = document.querySelector("#Colour"+String(i).value);
+            if (chosencolour !='' && chosencolour != 'null'){
+                if (chosencolour.match(blue)){
+                    chosencolour = "#67ace0";
+                }
+                colourchoice.push(chosencolour);
             }
         } 
         catch{
@@ -45,7 +50,7 @@ function first_draw(){
     for (i=0;i<cumulative_colours.length;i++){
         var table_colour = cumulative_colours[i];
         var TABLE_COLOUR = cumulative_colours[i];
-        var blue =/blue/i;
+       
         if (table_colour.match(blue)){
             table_colour = "#67ace0";
         }
@@ -122,7 +127,7 @@ function ran_choice(){
     var choice = og_colours[num];
     var CHOICE = choice
     choice = choice.toUpperCase();
-    if(choice.toUpperCase()=='BLUE'){
+    if(choice.match(blue)){
         choice ="#67ace0";
 
     }
@@ -130,7 +135,6 @@ function ran_choice(){
     var label_css =`display: block; font-size: 30pt; font-weight: bold; font-family:Arial, Helvetica, sans-serif; margin-left: auto; margin-right: auto; text-align:center; background-color:#3e444d; color:${choice}`;
     document.querySelector("#Choice").setAttribute("style",label_css);
     document.querySelector("#Choice").innerHTML=CHOICE;
-    // setTimeout(function(){document.querySelector("#Choice").innerHTML=CHOICE}, 150);
     setTimeout(function(){document.querySelector("#Choice").innerHTML=''}, 750);
     
     
