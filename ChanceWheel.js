@@ -10,27 +10,20 @@ function generate_chart(){
     colourchoice.length =0;
     for(i=1;i<11;i++){
         try{
-            
-            // var chosencolour = document.querySelector("#Colour"+String(i).value);
-            
-            if (document.querySelector("#Colour"+String(i).value) !='' && document.querySelector("#Colour"+String(i).value) != 'null'){
-                console.log(document.querySelector("#Colour"+String(i).innerHTML));
-                if (document.querySelector("#Colour"+String(i).value).match(blue)){
-                    
-                    chosencolour = "#67ace0";
-                }
-                else{
-                    chosencolour =document.querySelector("#Colour"+String(i).value);
-                }
-                colourchoice.push(document.querySelector("#Colour"+String(i).value));
+            if (document.querySelector("#Colour"+String(i)).value !='' && document.querySelector("#Colour"+String(i)).value != 'null'){
+                colourchoice.push(document.querySelector("#Colour"+i).value);
+                
             }
         } 
+       
+        
         catch{
             // pass
         }
     }
-
+    
     og_colours.length =0;
+    console.log("Hello");
     og_colours.push(...colourchoice);
     first_draw();
 }
