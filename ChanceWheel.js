@@ -14,8 +14,9 @@ function generate_chart(){
         try{
             if (document.querySelector("#Colour"+String(i)).value !='' && document.querySelector("#Colour"+String(i)).value != 'null'){
                 var cc =document.querySelector("#Colour"+String(i)).value;
-                og_blue =cc;
+                
                 if (cc.match(blue)){
+                    og_blue =cc;
                     colourchoice.push("#67ace0");
                 }
                 else if (!cc.match(blue)){
@@ -67,6 +68,7 @@ function first_draw(){
         }
         if (TABLE_COLOUR.match("#67ace0")){
             TABLE_COLOUR = og_blue;
+            console.log(og_blue,'ogblue');
         }
         // Table contents are named after their respective properties
         // E.g. "Red" will be red, because it was chosen as a colour
