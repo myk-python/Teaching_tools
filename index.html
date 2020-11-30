@@ -2,28 +2,29 @@
 <html>
     <head>
         <title>Teaching Site v1.0</title>
+        <link rel="stylesheet" href="styles.css">
         
     </head>
     <body style="background-color: #3e444d;">
 
-        <div id="ChanceTheWrapper" style="display: flex; margin-left: auto; margin-right: auto;">
-            <div id="ColourPropotions" style="display: inline-block; margin-right: 0; margin-left: auto;">
-                <div id="ColourChoices" style="display: block; margin-top: 60%;">
+        <div id="ChanceWrapper">
+            <div id="ColourPropotions">
+                <div id="ColourChoices">
                 </div>
-                <div id="GenerateContainer" style="display: block; text-align: center;">
+                <div id="GenerateContainer">
                     <button id="GenerateChart" onclick="generate_chart()">Draw Chart</button>
                 </div>
-                <div id="RandomChoiceContainer" style="display: block; text-align: center;">
+                <div id="RandomChoiceContainer">
                     <button id="Chooser" onclick="ran_choice()">Choose</button>
                 </div>
                 
-                <div id="LabelContainer" style="width: 100%; height: 2em; background-color: #3e444d; margin-right: auto; margin-left: auto; margin-top: 10%; margin-bottom: 10%;">
-                    <label id="Choice" style="width: 100%;"></label>
+                <div id="LabelContainer">
+                    <label id="Choice"></label>
                 </div>
             </div>
-            <canvas id="ChanceWheel" style="display: block; margin-right: auto; margin-left: 0; background-color:#3e444d;" height="500" width="500"></canvas>
+            <canvas id="ChanceWheel"></canvas>
         </div>
-        <table id="Counters" style="margin-left: auto; margin-right: auto; margin-bottom: 20%;">
+        <table id="Counters">
             <tr id="ColoursNames">
             </tr>
             <tr id="Counts">
