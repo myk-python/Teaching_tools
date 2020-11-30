@@ -30,6 +30,6 @@ function Randomiser(){
     
     
     document.getElementById("randomised").innerHTML = chosen;
-    document.getElementById('people').value =replacement;
+    document.getElementById('ListItems').value =replacement;
    
 }

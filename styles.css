@@ -1,5 +1,44 @@
 body{
     background-color: #3e444d;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#FormContainer{
+    display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#ChanceWheelPages{
+    display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
+    
+   
+}
+#RandomNamesPages{
+    display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
+   
+}
+#FormContainer Label {
+    color: #b0b0b0;
+    display: inline-block;
+    background-color: #2e4d7c;
+    
+    border-radius: 10px;
+    width: 100%;
+    
+}
+#ChanceWheelLoader{
+    display: none;
+}
+#RandomNamesLoader{
+    display: none;
 }
 
 #ChanceWrapper{
@@ -57,3 +96,18 @@ body{
     margin-right: auto; 
     margin-bottom: 20%;
 }
+
+#ListContainer{
+    font-family: Arial, Helvetica, sans-serif; 
+    color: #b0b0b0;
+    display: inline-block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#ListItems{
+    display: inline-block;
+    text-align: center;
+}
+

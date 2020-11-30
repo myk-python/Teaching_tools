@@ -5,19 +5,16 @@
         <script src="RandomNames.js"></script>
     </head>
 
-    <body style="background-color: #1b1b1b;">
-        <div style="background-color: #1b1b1b;">
-            <div style="text-align: center; color: #f0f0f0;">
-                <label>Enter names in box below:</label>
+    <body>        
+        <div id="RandomContainer">
+            <div id=ListContainer>
+                <textarea id='ListItems' rows='25' cols='20' placeholder="Enter items here..."></textarea>
             </div>
             <div style="text-align: center;">
-                <textarea id='people' rows='25' cols='20' style="color:#f0f0f0; background-color: #3f3f3f"></textarea>
+                <button type="button" onclick="Randomiser()">Randomise</button>
             </div>
             <div style="text-align: center;">
-                <button type="button" onclick="Randomiser()" style="width:16%; color: #f0f0f0; background-color: #3f3f3f;">Randomise</button>
-            </div>
-            <div style="text-align: center;">
-                <label id='randomised' style="font-weight: bold; font-size: 16pt; color: #82dff0;"></label>
+                <label id='randomised'></label>
             </div>
             
         </div>
