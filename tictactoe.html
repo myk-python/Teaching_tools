@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="icon" href="icon.png" type="image/x-icon">
+        <title>Tic Tac Toe</title>
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body>
+        <h2>Tic Tac Toe in TKinter</h2>
+        <div id="AppContainer">
+            <div id="VideoPlay" class="Player">
+                <label>CLICK TO PLAY</label>
+            </div>
+            <div id="VideoPaused" class="Player">
+                <label>PAUSED</label>
+            </div>
+            <div id="LargeVideo">
+                <video id="TicTacToe" src="TicTacToe.mp4" onclick="Player(this)"></video>
+            </div>
+            <p>This implementation of Tic Tac Toe uses pure Python.<br>
+            It alternates the start as X's or O's depending how how many games have been played.<br>
+            <a href="https://github.com/myk-python/Tic-Tac-Toe_Tkinter">See the repository</a><br>
+            <a href="https://github.com/myk-python/Tic-Tac-Toe_Tkinter/blob/main/TicTacToe_Tkinter.py">See the code</a>
+            </p>
+        </div>
+        <script>
+            var clicks =0;
+            function Player(element){
+            clicks ++;
+            var paused =document.getElementById("VideoPaused");
+            var play =document.getElementById("VideoPlay");
+            play.setAttribute("style", "display:none;");
+
+            if (3%clicks ==0){
+                paused.setAttribute("style", "display:none;");
+                element.play();
+                clicks =1;  
+            }
+            
+            else if(3%clicks !=0){ 
+                element.pause();
+                paused.setAttribute("style", "display:block;");
+                clicks =2;
+            }
+        }
+       
+        </script>
+    </body>
+</html>

@@ -30,6 +30,34 @@ video{
     width: 15%;
     height: 8.5%;
 }
+#LargeVideo{
+    width: 100%;
+    text-align: center;
+}
+#LargeVideo video{
+    width:30%;
+}
+#VideosContainer{
+    text-align: center;
+}
+#VideosContainer label{
+    color: #b0b0b0;
+    display: inline-block;
+    outline: none;
+    width: 100%;
+}
+#TicTacToePage{
+    display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
+   
+}
+#TicTacToeImg{
+    width: 20%;
+}
+#TicTacToeBtn{
+    display: none;
+}
 .Hidden{
     display: none;
     position: absolute;
@@ -48,11 +76,26 @@ video{
     z-index: 4;
     left:95%;
 }
+.Player{
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 30%;
+    left: 40%;
+    /* top:30%;
+    left: 45%; */
+}
+
+#VideoPlay Label{
+    color: #eeeeee;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28pt;
+    font-weight: bold;
+}
 #VideoPaused{
     display: none;
     position: absolute;
-    z-index: 3;
-    top:42%;
+    /* top: 30%; */
     left: 45%;
 }
 #VideoPaused Label{
@@ -66,7 +109,6 @@ video{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-
 }
 #ChanceWheelPages{
     display: inline-block;
@@ -97,8 +139,7 @@ video{
     color: #b0b0b0;
     display: inline-block;
     outline: none;
-    width: 100%;
-    
+    width: 100%; 
 }
 #FormContainerItems{
     text-align: center;
