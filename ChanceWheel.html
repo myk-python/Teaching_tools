@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Teaching Site v1.0</title>
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body>
+        <div id="FormContainer">
+            <form id="ChanceWheelPages" method="GET" action="ChanceWheel.html">
+                <label for="ChanceWheelLoader">LOAD CHANCE WHEEL</label>
+                <button id="ChanceWheelLoader" type="submit"></button>
+            </form>
+            
+            <form id="RandomNamesPages" method="GET" action="RandomNamesV2.html">
+                <label for="RandomNamesLoader">LOAD RANDOM LIST</label>
+                <button id="RandomNamesLoader" type="submit"></button>
+            </form>
+            <form id="ReturnToIndex" method="GET" action="index.html">
+                <label for="IndexLoader">RETURN TO INDEX</label>
+                <button id="IndexLoader" type="submit"></button>
+            </form>
+        </div>
+        
+        <div id="ChanceWrapper">
+            
+            <div id="ColourProportions">
+                <div id="ColourChoices">
+                </div>
+                <div id="ButtonContainerProb">
+                <div id="GenerateContainer">
+                    <button id="GenerateChart" onclick="generate_chart()">Draw Chart</button>
+                </div>
+                <div id="RandomChoiceContainer">
+                    <button id="Chooser" onclick="ran_choice()">Choose</button>
+                </div>
+                </div>
+                
+            </div>
+            <div id="LabelContainerWheel">
+                <label id="Choice"></label>
+            </div>
+            <canvas id="ChanceWheel"></canvas>
+            <p id="ChanceExplanation">Developed as a tool for Primary School Teachers. 
+                Up to ten individual colours can be chosen. Any probability out of ten can be chosen by entering colours proportionally.
+                E.g. Red, Red, Green will draw a chart with two thirds Red and one third Green.
+                Once chosen, a colour's "pie piece" is changed to white to indicate choice. 
+                It is assumed that users will type mainstream colours that are more likely to
+                be supported  e.g. magenta instead of rose. 
+                All blues are displayed as one hues/shade intentionally for better visibility.
+                <br><br>N.b. Currently only maximised views of this page are supported.
+            </p>
+        </div>
+        <table id="Counters">
+            <tr id="ColoursNames">
+            </tr>
+            <tr id="Counts">
+            </tr>
+        </table>
+        
+        <script>
+            // Creates 10 colour choice inputs with corresponding labels
+            for (i=1;i<11;i++){
+                var OptionsContainer =document.querySelector("#ColourChoices");
+                var ParentColourChooser =document.createElement("div");
+                var LabelChooser =document.createElement("label");
+                var ColourChooser = document.createElement("input");
+
+                ParentColourChooser.setAttribute("id",`div${i}`);
+                ParentColourChooser.setAttribute("style","display:block; width:100%;");
+                ColourChooser.setAttribute("id",`Colour${i}`);
+                LabelChooser.setAttribute("for",`Colour${i}`);
+                LabelChooser.setAttribute("style","color:#b0b0b0;");
+                LabelChooser.innerHTML=`Type colour ${i}:`;
+                ColourChooser.setAttribute("type","text");
+                ColourChooser.setAttribute("style","height: 1em; text-align:center; font-weight:bold; background-color: #505763; color: #eeeeee; border:0px; border-radius:15px; outline:none;")
+
+                ParentColourChooser.appendChild(LabelChooser);
+                ParentColourChooser.appendChild(ColourChooser);
+                
+                OptionsContainer.appendChild(ParentColourChooser);
+            }
+            // Draws a blank canvas with the same dimensions to prevent elements jumping when
+            // actual canvas is drawn later
+            var canvas = document.querySelector("#ChanceWheel");
+            var dimensions =400;
+            var fullcircle =2;
+            canvas.height = dimensions;
+            canvas.width =dimensions;
+            
+        </script>
+        <script src="ChanceWheel.js">
+        </script>
+    </body>
+</html>

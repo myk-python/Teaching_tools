@@ -6,75 +6,83 @@
         
     </head>
     <body>
-        <div id="FormContainer">
-            <form id="ChanceWheelPages" method="GET" action="index.html">
-                <label for="ChanceWheelLoader">LOAD CHANCE WHEEL</label>
-                <button id="ChanceWheelLoader" type="submit"></button>
-            </form>
-            
-            <form id="RandomNamesPages" method="GET" action="RandomNamesV2.html">
-                <label for="RandomNamesLoader">LOAD RANDOM LIST</label>
-                <button id="RandomNamesLoader" type="submit"></button>
-            </form>
-        </div>
-        <div id="ChanceWrapper">
-            <div id="ColourProportions">
-                <div id="ColourChoices">
-                </div>
-                <div id="GenerateContainer">
-                    <button id="GenerateChart" onclick="generate_chart()">Draw Chart</button>
-                </div>
-                <div id="RandomChoiceContainer">
-                    <button id="Chooser" onclick="ran_choice()">Choose</button>
-                </div>
+        <div id="AppContainer">
+            <h2>Live JavaScript-based examples</h2>
+            <div id="FormContainer">
+                <form id="ChanceWheelPages" method="GET" action="ChanceWheel.html">
+                    <label for="ChanceWheelLoader">LOAD CHANCE WHEEL</label>
+                    <button id="ChanceWheelLoader" type="submit"></button>
+                </form>
                 
-                <div id="LabelContainer">
-                    <label id="Choice"></label>
-                </div>
+                <form id="RandomNamesPages" method="GET" action="RandomNamesV2.html">
+                    <label for="RandomNamesLoader">LOAD RANDOM LIST</label>
+                    <button id="RandomNamesLoader" type="submit"></button>
+                </form>
             </div>
-            <canvas id="ChanceWheel"></canvas>
+            <div id="Separator">
+                
+            </div>    
+            <h2>Python-based projects</h2>
+            </div>
+        </div> 
+        <div id=Videos>
+            <video id="TicTacToe" src="TicTacToe.mp4" onclick="Fullscreen(this)"></video>
+            <video id="FlaskImageDisplay" src="FlaskImageDisplay.mp4" onclick="Fullscreen(this)"></video>
+        </div>    
+        <div class="Hidden" id="HiddenTicTacToe">
+            <video src="TicTacToe.mp4" onclick="Player(this)"></video>
+            <button id="QuitVideo" onclick="Reduce()">QUIT</button>
         </div>
-        <table id="Counters">
-            <tr id="ColoursNames">
-            </tr>
-            <tr id="Counts">
-            </tr>
-        </table>
-    
-        <script>
-            // Creates 10 colour choice inputs with corresponding labels
-            for (i=1;i<12;i++){
-                var OptionsContainer =document.querySelector("#ColourChoices");
-                var ParentColourChooser =document.createElement("div");
-                var LabelChooser =document.createElement("label");
-                var ColourChooser = document.createElement("input");
-                ParentColourChooser.setAttribute("id",`div${i}`);
-                ParentColourChooser.setAttribute("style","display:block; width:100%;");
+        <div class="Hidden" id="HiddenFlaskImageDisplay">
+            <video src="FlaskImageDisplay.mp4" onclick="Player(this)"></video>
+            <button id="QuitVideo" onclick="Reduce()">QUIT</button>
+        </div>
+        
+        <div id="VideoPaused">
+            <label>PAUSED</label>
+        </div>
+    <script>
+        var clicks =0;
+        var id ='';
+        function Fullscreen(element){
+            var AppContainer = document.getElementById("AppContainer");
+            AppContainer.setAttribute("Style","display:none;");
+            id = element.id;
 
-               
-                
-                ColourChooser.setAttribute("id",`Colour${i}`);
-                LabelChooser.setAttribute("for",`Colour${i}`);
-                LabelChooser.setAttribute("style","color:#b0b0b0;");
-                LabelChooser.innerHTML="Type a colour:";
-                ColourChooser.setAttribute("type","text");
-                ColourChooser.setAttribute("style","height: 1em; background-color: #84868a; border:0px;")
-
-                ParentColourChooser.appendChild(LabelChooser);
-                ParentColourChooser.appendChild(ColourChooser);
-                
-                OptionsContainer.appendChild(ParentColourChooser);
-            }
-            // Draws a blank canvas with the same dimensions to prevent elements jumping when
-            // actual canvas is drawn later
-            var canvas = document.querySelector("#ChanceWheel");
-            var dimensions =500;
-            var fullcircle =2;
-            canvas.height = dimensions;
-            canvas.width =dimensions;
+            var SmallVideo = document.getElementById('Videos');
+            var LargeVideo = document.getElementById('Hidden'+`${id}`);
+            SmallVideo.setAttribute("style", "display:none;");
+            LargeVideo.setAttribute("style", "display:inline-block; margin-left:auto;margin-right:auto;");
             
-        </script>
-        <script src="ChanceWheel.js">
-        </script>
+        }
+        function Player(element){
+            clicks ++;
+            var paused =document.getElementById("VideoPaused");
+
+            if (3%clicks ==0){
+                paused.setAttribute("style", "display:none;");
+                element.play();
+                clicks =1;  
+            }
+            
+            else if(3%clicks !=0){ 
+                element.pause();
+                paused.setAttribute("style", "display:block;");
+                clicks =2;
+            }
+        }
+        function Reduce(){
+            
+            var paused =document.getElementById("VideoPaused");
+            paused.setAttribute("style", "display:none;");
+            var AppContainer = document.getElementById("AppContainer");
+            AppContainer.setAttribute("Style","display:block;");
+            var SmallVideo = document.getElementById('Videos');
+            var LargeVideo = document.getElementById('Hidden'+`${id}`);
+            SmallVideo.setAttribute("style", "display:block;");
+            LargeVideo.setAttribute("style", "display:none;");
+
+        }
+    </script>
     </body>
 </html>

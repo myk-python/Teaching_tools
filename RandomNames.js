@@ -8,7 +8,7 @@ function Null_remove(element){
 }
 function Randomiser(){
     
-    var uinput = document.getElementById('people').value;
+    var uinput = document.getElementById('ListItems').value;
     uinput = String(uinput);
     var split_input = uinput.split('\n');
     var filtered = split_input.filter(Null_remove);
@@ -28,8 +28,12 @@ function Randomiser(){
     
     var replacement = uinput.replace(filtered[rand],'');
     
-    
-    document.getElementById("randomised").innerHTML = chosen;
+    if (filtered.length >0){
+        document.getElementById("RandomItemChoice").innerHTML = chosen;
+    }
+    else{
+        document.getElementById("RandomItemChoice").innerHTML ="No choices remain";
+    }    
     document.getElementById('ListItems').value =replacement;
    
 }
