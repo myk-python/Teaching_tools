@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8"/>
-    <head> 
+    <head>
+        <link rel="icon" href="icon.png" type="image/x-icon"> 
+        <title>Random Item Chooser</title>
         <link rel="stylesheet" href="styles.css"> 
         <script src="RandomNames.js"></script>
     </head>
 
     <body>  
-        <div id="FormContainer">
-            <form id="ChanceWheelPages" method="GET" action="ChanceWheel.html">
-                <label for="ChanceWheelLoader">LOAD CHANCE WHEEL</label>
-                <button id="ChanceWheelLoader" type="submit"></button>
-            </form>
-            
-            <form id="RandomNamesPages" method="GET" action="RandomNamesV2.html">
-                <label for="RandomNamesLoader">LOAD RANDOM LIST</label>
-                <button id="RandomNamesLoader" type="submit"></button>
-            </form>
+        <h2>Random Item Chooser</h2>
+        
+        <div id="FormContainerItems">
             <form id="ReturnToIndex" method="GET" action="index.html">
                 <label for="IndexLoader">RETURN TO INDEX</label>
                 <button id="IndexLoader" type="submit"></button>
             </form>
         </div>
-        <p id="RandomItemExplanation">
-            Developed as a tool for Primary School Teachers. 
-            Student names can be typed or pasted in as a list.
-            Ine student is then randomly chosen e.g. for group allocation.
-            Once chosen, the student is removed from the original list.
-            The function is resiliant against missing values
-            or names with spaces. It is assumed that a name will only
-            span one line.
-        </p>      
-        <div id="RandomContainer">
+        <div id="AppContainerItems">
+            <div id="RandomContainer">
+                
+                <div id=ListContainer>
+                    <textarea id='ListItems' rows='20' cols='21' placeholder="Enter items here..."></textarea>
+                </div>
+                <div id="ButtonContainer">
+                    <button type="button" id="RandomiserBtn" onclick="Randomiser()">RANDOM CHOICE</button>
+                </div>
+                <div id="LabelContainer">
+                    <label id='RandomItemChoice'></label>
+                </div>
+            </div>
+            <p id="RandomItemExplanation">
+                Developed as a tool for Primary School Teachers. 
+                Student names can be typed or pasted in as a list.
+                One student is then randomly chosen
+                <br> e.g. for group allocation.<br><br>
+                Once chosen, the student is removed from the original list.
+                The function is resiliant against missing values
+                or names with spaces. However, it is assumed that a name will only
+                span one line.
+                <br><br>
+                <a href="https://github.com/myk-python/Teaching_tools/blob/main/RandomNamesV2.html">View the HTML</a>
+                <br>
+                <a href="https://github.com/myk-python/Teaching_tools/blob/main/RandomNames.js">View the JavaScript</a> 
+            </p>      
             
-            <div id=ListContainer>
-                <textarea id='ListItems' rows='20' cols='21' placeholder="Enter items here..."></textarea>
-            </div>
-            <div id="ButtonContainer">
-                <button type="button" id="RandomiserBtn" onclick="Randomiser()">RANDOM CHOICE</button>
-            </div>
-            <div id="LabelContainer">
-                <label id='RandomItemChoice'></label>
-            </div>
-            </div>
-            
+        </div>
         
     </body>
 </html>

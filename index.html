@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Teaching Site v1.0</title>
+        <meta charset="utf-8"/>
+        <link rel="icon" href="icon.png" type="image/x-icon">
+        <title>Skye Allan-Demo Site</title>
         <link rel="stylesheet" href="styles.css">
         
     </head>
     <body>
+        <div id="AboutMe">
+            <img id="Avatar" src="icon.png">
+            <p>
+                Some text about myself will go here.
+                It will be a good few sentences, 
+                covering multiple lines.
+            </p>
+        </div>
+        <h2>Click for live JavaScript-based examples</h2>
         <div id="AppContainer">
-            <h2>Live JavaScript-based examples</h2>
+            
             <div id="FormContainer">
                 <form id="ChanceWheelPages" method="GET" action="ChanceWheel.html">
                     <label for="ChanceWheelLoader">LOAD CHANCE WHEEL</label>
+                    <img id="ChanceWheelImg" src="ChanceWheel.png" onclick="document.location='ChanceWheel.html';">
                     <button id="ChanceWheelLoader" type="submit"></button>
                 </form>
                 
                 <form id="RandomNamesPages" method="GET" action="RandomNamesV2.html">
                     <label for="RandomNamesLoader">LOAD RANDOM LIST</label>
+                    <img id="RandomItemChooserImg" src="RandomItemChooser.png" onclick="document.location='RandomNamesV2.html';">
                     <button id="RandomNamesLoader" type="submit"></button>
                 </form>
             </div>

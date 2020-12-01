@@ -95,7 +95,7 @@ function Null_remove(element){
 
 function choices(possibilities, remove, index){
     var canvas = document.querySelector("#ChanceWheel");
-    var dimensions =500;
+    var dimensions =400;
     var fullcircle =2;
     canvas.height = dimensions;
     canvas.width =dimensions;
@@ -165,7 +165,7 @@ function ran_choice(){
 
     }
     
-    var label_css =`display: block; font-size: 30pt; font-weight: bold; font-family:Arial, Helvetica, sans-serif; margin-left: auto; margin-right: auto; text-align:center; background-color:#3e444d; color:${choice}`;
+    var label_css =`display: block; position:absolute; z-index:3; top:68%; left:40%; font-size: 30pt; font-weight: bold; font-family:Arial, Helvetica, sans-serif; margin-left: auto; margin-right: auto; text-align:center; background-color:#3e444d; color:${choice}`;
     document.querySelector("#Choice").setAttribute("style",label_css);
     document.querySelector("#Choice").innerHTML=CHOICE;
     // Only want to briefly display the chosen colour

@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Teaching Site v1.0</title>
+        <link rel="icon" href="icon.png" type="image/x-icon">
+        <title>Probability Teaching Tool</title>
         <link rel="stylesheet" href="styles.css">
         
     </head>
     <body>
-        <div id="FormContainer">
-            <form id="ChanceWheelPages" method="GET" action="ChanceWheel.html">
-                <label for="ChanceWheelLoader">LOAD CHANCE WHEEL</label>
-                <button id="ChanceWheelLoader" type="submit"></button>
-            </form>
-            
-            <form id="RandomNamesPages" method="GET" action="RandomNamesV2.html">
-                <label for="RandomNamesLoader">LOAD RANDOM LIST</label>
-                <button id="RandomNamesLoader" type="submit"></button>
-            </form>
+        <h2>Probability Teaching Tool</h2>
+        <div id="FormContainerItems">
             <form id="ReturnToIndex" method="GET" action="index.html">
                 <label for="IndexLoader">RETURN TO INDEX</label>
                 <button id="IndexLoader" type="submit"></button>
@@ -40,15 +33,21 @@
             <div id="LabelContainerWheel">
                 <label id="Choice"></label>
             </div>
-            <canvas id="ChanceWheel"></canvas>
+            <div id="CanvasContainer">
+                <canvas id="ChanceWheel"></canvas>
+            </div>
             <p id="ChanceExplanation">Developed as a tool for Primary School Teachers. 
                 Up to ten individual colours can be chosen. Any probability out of ten can be chosen by entering colours proportionally.
+                <br><br>
                 E.g. Red, Red, Green will draw a chart with two thirds Red and one third Green.
+                <br><br>
                 Once chosen, a colour's "pie piece" is changed to white to indicate choice. 
                 It is assumed that users will type mainstream colours that are more likely to
-                be supported  e.g. magenta instead of rose. 
-                All blues are displayed as one hues/shade intentionally for better visibility.
-                <br><br>N.b. Currently only maximised views of this page are supported.
+                be supported  e.g. magenta instead of rose. All blues are displayed as one hues/shade intentionally for better visibility.
+                <br><br>N.b. Currently only maximised views of this page are supported.<br><br>
+                <a href="https://github.com/myk-python/Teaching_tools/blob/main/ChanceWheel.html">View the HTML</a>
+                <br>
+                <a href="https://github.com/myk-python/Teaching_tools/blob/main/ChanceWheel.js">View the JavaScript</a> 
             </p>
         </div>
         <table id="Counters">
@@ -73,7 +72,7 @@
                 LabelChooser.setAttribute("style","color:#b0b0b0;");
                 LabelChooser.innerHTML=`Type colour ${i}:`;
                 ColourChooser.setAttribute("type","text");
-                ColourChooser.setAttribute("style","height: 1em; text-align:center; font-weight:bold; background-color: #505763; color: #eeeeee; border:0px; border-radius:15px; outline:none;")
+                ColourChooser.setAttribute("style","height: 1em; text-align:center; width:100%; font-weight:bold; background-color: #505763; color: #eeeeee; border:0px; border-radius:15px; outline:none;")
 
                 ParentColourChooser.appendChild(LabelChooser);
                 ParentColourChooser.appendChild(ColourChooser);
