@@ -1,6 +1,24 @@
+/* This CSS is en evolving document.
+It will become more concise as it is refactored, and irrelvant code removed. */
+
+
 body{
     background-color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    text-align: center;
+}
+#AboutMeBio{
+    text-align: justify;
+    margin-right: 30%;
+    margin-left: 30%;
+}
+#SocialsContainer img{
+    width: 3%;
+}
+#SocialsContainer a{
+    color:#ffffff;
 }
 #ProbabilityTool, #RandomItemTool, #TTTPage{
     background-color: #3e444d;
@@ -9,7 +27,7 @@ body{
 #ProbabilityTool h2{
     margin-top: 0%;
 }
-h2{
+h3{
     text-align: center;
     color: #b0b0b0;
     margin-bottom: 0%;
