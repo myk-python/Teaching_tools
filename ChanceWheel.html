@@ -15,6 +15,7 @@
             </form>
         </div>
         
+        
         <div id="ChanceWrapper">
             
             <div id="ColourProportions">
@@ -30,9 +31,7 @@
                 </div>
                 
             </div>
-            <div id="LabelContainerWheel">
-                <label id="Choice"></label>
-            </div>
+            
             <div id="CanvasContainer">
                 <canvas id="ChanceWheel"></canvas>
             </div>
@@ -51,13 +50,17 @@
                 
             </p>
         </div>
-        <table id="Counters">
-            <tr id="ColoursNames">
-            </tr>
-            <tr id="Counts">
-            </tr>
-        </table>
-        
+        <div id="LabelContainerWheel">
+            <label id="Choice"></label>
+        </div>
+        <div id="CounterContainer">
+            <table id="Counters">
+                <tr id="ColoursNames">
+                </tr>
+                <tr id="Counts">
+                </tr>
+            </table>
+        </div>
         <script>
             // Creates 10 colour choice inputs with corresponding labels
             for (i=1;i<11;i++){

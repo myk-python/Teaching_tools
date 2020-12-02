@@ -6,6 +6,9 @@ body{
     background-color: #3e444d;
     font-family: Arial, Helvetica, sans-serif;
 }
+#ProbabilityTool h2{
+    margin-top: 0%;
+}
 h2{
     text-align: center;
     color: #b0b0b0;
@@ -14,13 +17,15 @@ h2{
 a { 
     color: #448fff;
 }
+#ProbabilityTool Form label{
+    margin-top: 1%;
+    margin-bottom: 0%;
+}
+#RandomItemTool Form label, #TTTPage Form label{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
 
-/* #AboutMe{
-    display: block;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-} */
 #Avatar{
     width: 20%;
     height: 20%;
@@ -44,6 +49,7 @@ video{
 #LargeVideo video{
     width:60%;
 }
+
 
 #VideosContainer label{
     color: #b0b0b0;
@@ -83,7 +89,9 @@ video{
     top: 50%;
     left: 20%;
 }
-
+#VideoPlay{
+    position: relative;
+}
 #VideoPlay Label{
     color: #eeeeee;
     font-family: Arial, Helvetica, sans-serif;
@@ -93,8 +101,8 @@ video{
 #VideoPaused{
     display: none;
     position: absolute;
-    top: 50%;
-    left: 24%;
+    top: 42%;
+    left: 23.5%;
 }
 #VideoPaused Label{
     color: #eeeeee;
@@ -117,13 +125,10 @@ video{
     margin-left: auto;
     margin-bottom: 2%;
 }
-#ChanceWheelImg{
-    width: 40%;
-    
+#ChanceWheelImg, #RandomItemChooserImg, #TicTacToeImg{
+    width: 40%; 
 }
-#RandomItemChooserImg{
-    width: 40%;
-}
+
    
 #ChanceExplanation{
     color:#b0b0b0;
@@ -160,6 +165,7 @@ video{
     display: flex; 
     margin-left: auto; 
     margin-right: auto;
+    height:390px;
 }
 
 #ColourProportions{
@@ -210,23 +216,28 @@ video{
     height:400px; 
     width:400px;
 }
-
+#Choice{
+    display: block; 
+    font-size: 30pt; 
+    height: 1em;
+    font-weight: bold; 
+    font-family:Arial, Helvetica, sans-serif; 
+    text-align: center;
+}
+#CounterContainer{
+    text-align: center;
+}
 #Counters{
-    display: block;
-    z-index: 2;
     margin-left: auto; 
     margin-right: auto; 
-    position: absolute;
-    top: 75%;
-    left: 30%;
-    
 }
 
 #AppContainerItems, #AppContainer{
     display: flex;
     width: 100%;
-    margin-top: 2%;
 }
+
+
 #RandomItemExplanation{
     color:#b0b0b0;
     text-align: justify;
@@ -234,6 +245,11 @@ video{
     margin-right: 10%;
     margin-bottom: 0%;
     width: 30%;
+}
+
+#TTTPage #AppContainer{
+    margin-top:2%;
+    position: relative;
 }
 #TicTacToeExplanation{
     color:#b0b0b0;

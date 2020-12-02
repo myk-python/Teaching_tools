@@ -179,12 +179,12 @@ function ran_choice(){
     }
    
     
-    var label_css =`display: block; position:absolute; z-index:3; top:68%; left:40%; font-size: 30pt; font-weight: bold; font-family:Arial, Helvetica, sans-serif; margin-left: auto; margin-right: auto; text-align:center; background-color:#3e444d; color:${choice}`;
+    var label_css =`display: block; font-size: 30pt; font-weight: bold; font-family:Arial, Helvetica, sans-serif; margin-left: auto; margin-right: auto; text-align:center; background-color:#3e444d; color:${choice}`;
     document.querySelector("#Choice").setAttribute("style",label_css);
     document.querySelector("#Choice").innerHTML=CHOICE;
     // Only want to briefly display the chosen colour
     // This makes it easier to see when the same colour is chosen sequentially
-    setTimeout(function(){document.querySelector("#Choice").innerHTML=''}, 750);
+    // setTimeout(function(){document.querySelector("#Choice").innerHTML=''}, 750);
     
     
     var choicecount= Number(document.querySelector(`#${CHOICE}`).innerHTML);
