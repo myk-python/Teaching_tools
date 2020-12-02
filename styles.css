@@ -1,19 +1,26 @@
 body{
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#ProbabilityTool, #RandomItemTool, #TTTPage{
     background-color: #3e444d;
     font-family: Arial, Helvetica, sans-serif;
 }
 h2{
     text-align: center;
     color: #b0b0b0;
+    margin-bottom: 0%;
 }
-a {
+a { 
     color: #448fff;
 }
-#AboutMe{
+
+/* #AboutMe{
     display: block;
     text-align: center;
-    width: 100%;
-}
+    margin-right: auto;
+    margin-left: auto;
+} */
 #Avatar{
     width: 20%;
     height: 20%;
@@ -35,25 +42,18 @@ video{
     text-align: center;
 }
 #LargeVideo video{
-    width:30%;
+    width:60%;
 }
-#VideosContainer{
-    text-align: center;
-}
+
 #VideosContainer label{
     color: #b0b0b0;
     display: inline-block;
     outline: none;
     width: 100%;
 }
-#TicTacToePage{
-    display: inline-block;
-    margin-right: auto;
-    margin-left: auto;
-   
-}
+
 #TicTacToeImg{
-    width: 20%;
+    width: 30%;
 }
 #TicTacToeBtn{
     display: none;
@@ -80,10 +80,8 @@ video{
     display: block;
     position: absolute;
     z-index: 3;
-    top: 30%;
-    left: 40%;
-    /* top:30%;
-    left: 45%; */
+    top: 50%;
+    left: 20%;
 }
 
 #VideoPlay Label{
@@ -95,8 +93,8 @@ video{
 #VideoPaused{
     display: none;
     position: absolute;
-    /* top: 30%; */
-    left: 45%;
+    top: 50%;
+    left: 24%;
 }
 #VideoPaused Label{
     color: #eeeeee;
@@ -105,15 +103,19 @@ video{
     font-weight: bold;
 }
 #FormContainer{
-    display: flex;
+    display: block;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
-#ChanceWheelPages{
-    display: inline-block;
+
+
+#AboutMe, #ChanceWheelPages, #RandomNamesPages, #TicTacToePage{
+    display: block;
+    text-align: center;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 2%;
 }
 #ChanceWheelImg{
     width: 40%;
@@ -122,17 +124,12 @@ video{
 #RandomItemChooserImg{
     width: 40%;
 }
-#RandomNamesPages{
-    display: inline-block;
-    margin-right: auto;
-    margin-left: auto;
    
-}
 #ChanceExplanation{
     color:#b0b0b0;
     text-align: justify;
-    margin-right: 10%;
-    margin-bottom: 0%;
+    margin-right: 2%;
+    margin-top: 0%;
     width:25%;
 }
 #FormContainer Label {
@@ -202,7 +199,6 @@ video{
 
 #CanvasContainer{
     display: inline;
-    /* width: 50%; */
     margin-right: auto;
     margin-left: auto;
 }
@@ -226,9 +222,10 @@ video{
     
 }
 
-#AppContainerItems{
+#AppContainerItems, #AppContainer{
     display: flex;
     width: 100%;
+    margin-top: 2%;
 }
 #RandomItemExplanation{
     color:#b0b0b0;
@@ -237,6 +234,12 @@ video{
     margin-right: 10%;
     margin-bottom: 0%;
     width: 30%;
+}
+#TicTacToeExplanation{
+    color:#b0b0b0;
+    text-align: justify;
+    margin-right: 5%;
+    width: 50%;
 }
 #RandomContainer{
     display: block;

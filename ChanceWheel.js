@@ -68,7 +68,6 @@ function first_draw(){
         }
         if (TABLE_COLOUR.match("#67ace0")){
             TABLE_COLOUR = og_blue;
-            console.log(og_blue,'ogblue');
         }
         // Table contents are named after their respective properties
         // E.g. "Red" will be red, because it was chosen as a colour
@@ -119,7 +118,16 @@ function choices(possibilities, remove, index){
         if(randcols.length>0){
             var possibilities =randcols.length;
             colours.length=0;
-            colours.push(...og_colours);
+            for (i=0;i<possibilities;i++){
+                if(og_colours[i].match(blue)){
+                    colours.push("#67ace0");
+                }
+                else if(!og_colours[i].match(blue)){
+                    colours.push(og_colours[i]);
+                }
+            }
+            
+            
             // If a random choice was made, will change the colour to white
             colours[index] =randcols[index];
             randcols.length=0;
@@ -164,6 +172,12 @@ function ran_choice(){
         og_colours[num] =og_blue;
 
     }
+    else if(choice.match(blue)){
+        CHOICE =og_blue;
+        choice ="#67ace0";
+        og_colours[num] =choice;
+    }
+   
     
     var label_css =`display: block; position:absolute; z-index:3; top:68%; left:40%; font-size: 30pt; font-weight: bold; font-family:Arial, Helvetica, sans-serif; margin-left: auto; margin-right: auto; text-align:center; background-color:#3e444d; color:${choice}`;
     document.querySelector("#Choice").setAttribute("style",label_css);
@@ -173,9 +187,9 @@ function ran_choice(){
     setTimeout(function(){document.querySelector("#Choice").innerHTML=''}, 750);
     
     
-    var choicecount= Number(document.querySelector(`#${og_colours[num]}`).innerHTML);
+    var choicecount= Number(document.querySelector(`#${CHOICE}`).innerHTML);
     choicecount++;
-    document.querySelector(`#${og_colours[num]}`).innerHTML=String(choicecount);
+    document.querySelector(`#${CHOICE}`).innerHTML=String(choicecount);
     // This can be changed as needed to prevent clashes with user choices
     randcols[num]="white";
 

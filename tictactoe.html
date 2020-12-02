@@ -7,21 +7,33 @@
         <link rel="stylesheet" href="styles.css">
         
     </head>
-    <body>
-        <h2>Tic Tac Toe in TKinter</h2>
+    <body id="TTTPage">
+        <div id="FormContainerItems">
+            <h2>Tic Tac Toe in TKinter</h2>
+            <form id="ReturnToIndex" method="GET" action="index.html">
+                <label for="IndexLoader">RETURN TO INDEX</label>
+                <button id="IndexLoader" type="submit"></button>
+            </form>
+        </div>
+        
         <div id="AppContainer">
-            <div id="VideoPlay" class="Player">
-                <label>CLICK TO PLAY</label>
+            <div id=VideoContainer>
+                <div id="VideoPlay" class="Player">
+                    <label>CLICK TO PLAY</label>
+                </div>
+                <div id="VideoPaused" class="Player">
+                    <label>PAUSED</label>
+                </div>
+                <div id="LargeVideo">
+                    <video id="TicTacToe" src="TicTacToe.mp4" onclick="Player(this)" onended="Reset()"></video>
+                </div>
             </div>
-            <div id="VideoPaused" class="Player">
-                <label>PAUSED</label>
-            </div>
-            <div id="LargeVideo">
-                <video id="TicTacToe" src="TicTacToe.mp4" onclick="Player(this)"></video>
-            </div>
-            <p>This implementation of Tic Tac Toe uses pure Python.<br>
-            It alternates the start as X's or O's depending how how many games have been played.<br>
-            <a href="https://github.com/myk-python/Tic-Tac-Toe_Tkinter">See the repository</a><br>
+            <p id="TicTacToeExplanation">
+            This implementation of Tic Tac Toe uses the Python built-in library, TKinter.
+            X's or O's start in an alternating pattern, based on the number of games played.
+            Custom-made images are used to represent each tile type.
+            The restart button clears the tiles to start a new game, whilst preserving the original window.<br><br> 
+            <a href="https://github.com/myk-python/Tic-Tac-Toe_Tkinter">View the repository</a> 
             <a href="https://github.com/myk-python/Tic-Tac-Toe_Tkinter/blob/main/TicTacToe_Tkinter.py">See the code</a>
             </p>
         </div>
@@ -44,6 +56,10 @@
                 paused.setAttribute("style", "display:block;");
                 clicks =2;
             }
+        }
+        function Reset(){
+            var video = document.getElementById("VideoPlay");
+            video.setAttribute("Style","display:block;");
         }
        
         </script>
