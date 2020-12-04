@@ -23,7 +23,7 @@
                     <label>PAUSED</label>
                 </div>
                 <div id="LargeVideo">
-                    <video id="IAFVid" src="IAFiltering.mp4" onclick="Player(this)" onended="Reset()"></video>
+                    <video id="IAFVid" src="IAFiltering.mp4" onclick="Player(this)" onended="this.play()"></video>
                 </div>
             </div>
             <p id="IAFilteringExplanation">
@@ -65,10 +65,7 @@
                     clicks =2;
                 }
             }
-            function Reset(){
-                var video = document.getElementById("VideoPlay");
-                video.setAttribute("Style","display:block;");
-            }
+            
        
         </script>
     </body>

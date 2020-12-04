@@ -42,6 +42,9 @@ h3{
     /* color: #8b8b8b; */
     margin-bottom: 0%;
 }
+#AboutMe h3{
+    margin-top: 3%;
+}
 h4{
     margin-top: 0%;
 }

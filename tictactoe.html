@@ -23,7 +23,7 @@
                     <label>PAUSED</label>
                 </div>
                 <div id="LargeVideo">
-                    <video id="TicTacToe" src="TicTacToe.mp4" onclick="Player(this)" onended="Reset()"></video>
+                    <video id="TicTacToe" src="TicTacToe.mp4" onclick="Player(this)" onended="this.play()"></video>
                 </div>
             </div>
             <p id="TicTacToeExplanation">
@@ -62,10 +62,7 @@
                     clicks =2;
                 }
             }
-            function Reset(){
-                var video = document.getElementById("VideoPlay");
-                video.setAttribute("Style","display:block;");
-            }
+            
        
         </script>
     </body>
