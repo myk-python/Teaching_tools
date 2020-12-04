@@ -30,8 +30,8 @@
             This is the login page for a site that uses Python/Flask-rendered (using Jinja templating) 
             page to take an uploaded image from the user, and apply filters to it. 
             <br><br>
-            User accounts are stored in a backend SQLite3 database. If the user account does not exist, users cannot 
-            login. Instead, they must create one. Users need to enter their password twice. JavaScript
+            User accounts are stored in a SQLite3 database. Users cannot login without an account.
+            To create one, users need to enter their password twice. JavaScript
             validates that they have entered the same password each time.<br><br>
             After logging in, users gain access to the image upload and filter functions (<a href="IAFiltering.html">See part two</a>).
             The Python backend is written to prevent access to any of the static pages without logging in.
@@ -39,7 +39,7 @@
             <br><br>
             <a href="https://github.com/myk-python/Flask_Image_Filtering">See the repository</a>
             <br> 
-            <a href="https://github.com/myk-python/Flask_Image_Filtering/blob/main/app.py">See the python code</a>
+            <a href="https://github.com/myk-python/Flask_Image_Filtering/blob/main/app.py">See the Python code</a>
             </p>
         </div>
         <script>
@@ -69,7 +69,6 @@
                 }
             }
            
-       
         </script>
     </body>
 </html>
