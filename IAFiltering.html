@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="icon" href="icon.png" type="image/x-icon">
+        <title>IA Filtering:Filters</title>
+        <link href="https://fonts.googleapis.com/css?family=Archivo:500|Open+Sans:300,700" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body id="IAFilteringFilters">
+        <div id="FormContainerItems">
+            <h2>Image upload and filtering</h2>
+            <form id="ReturnToIndex" method="GET" action="index.html">
+                <label for="IndexLoader">RETURN TO INDEX</label>
+                <button id="IndexLoader" type="submit"></button>
+            </form>
+        </div>
+        
+        <div id="AppContainer">
+            <div id=VideoContainer>
+                <div id="VideoPaused" class="Player">
+                    <label>PAUSED</label>
+                </div>
+                <div id="LargeVideo">
+                    <video id="IAFVid" src="IAFiltering.mp4" onclick="Player(this)" onended="Reset()"></video>
+                </div>
+            </div>
+            <p id="IAFilteringExplanation">
+            This site uses Python/Flask-rendered (using Jinja templating) page to take an uploaded image from the user, and apply
+            filters to it. After uploading, filter buttons are programatically created using JavaScript.<br><br>
+            The original image is filtered using a Python Image Library backend before being 
+            returned to the user as an object in the new page. JavaScript is used to dynamically render 
+            the image with the appropriate dimensions - although these have been arbitrarily decided based 
+            visual appearance.
+            <br><br> 
+            <a href="https://github.com/myk-python/Flask_Image_Filtering">See the repository</a>
+            <br> 
+            <a href="https://github.com/myk-python/Flask_Image_Filtering/blob/main/app.py">See the python code</a>
+            </p>
+        </div>
+        <script>
+            // This can be refactored out if it grows
+            // But for now it is concise enough to keep the functions here
+            var video =document.getElementById("IAFVid");
+            video.volume =0;
+            video.play();
+            var clicks =1;
+
+            function Player(element){
+                clicks ++;
+                var paused =document.getElementById("VideoPaused");
+
+                if (3%clicks ==0){
+                    paused.setAttribute("style", "display:none;");
+                    element.play();
+                    element.setAttribute('style','opacity:1;');
+                    clicks =1;  
+                }
+                
+                else if(3%clicks !=0){ 
+                    element.pause();
+                    element.setAttribute('style','opacity:0.5;');               
+                    paused.setAttribute("style", "display:block;");
+                    clicks =2;
+                }
+            }
+            function Reset(){
+                var video = document.getElementById("VideoPlay");
+                video.setAttribute("Style","display:block;");
+            }
+       
+        </script>
+    </body>
+</html>
