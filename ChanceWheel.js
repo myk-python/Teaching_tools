@@ -20,7 +20,7 @@ function generate_chart(){
                     colourchoice.push("#67ace0");
                 }
                 else if (!cc.match(blue)){
-                    colourchoice.push(document.querySelector("#Colour"+i).value);
+                    colourchoice.push(document.querySelector("#Colour"+String(i)).value);
                 }
             }
         } 
