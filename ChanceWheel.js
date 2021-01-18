@@ -42,13 +42,13 @@ function first_draw(){
     // Used to create table to display counts without repeating colour names
     var cumulative_colours =[];
     for(i=0;i<possibilities;i++){
-        for(j=0;j<possibilities;j++){
-            if(og_colours[i]==og_colours[j]){
+        //for(j=0;j<possibilities;j++){
+          //  if(og_colours[i]==og_colours[j]){
                 if(!cumulative_colours.includes(og_colours[i])){
                     cumulative_colours.push(og_colours[i]);
                 }
-            }
-        }
+            //}
+        //}
     }
 
     var table_row1 = document.querySelector("#ColoursNames");
